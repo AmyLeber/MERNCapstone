@@ -1,5 +1,5 @@
 const MongoClient = require('mongodb').MongoClient;
-const url = 'mongodb+srv://rebelyma:Dammitpleasework@rebel1.qdzrayy.mongodb.net/myproject?retryWrites=true&w=majority';
+const url = process.env.MONGODB_URI;
 let db = null;
 
 // Function to connect to MongoDB
