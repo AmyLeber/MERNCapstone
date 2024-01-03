@@ -1,6 +1,8 @@
 const MongoClient = require('mongodb').MongoClient;
+require('dotenv').config();
 const url = `mongodb+srv://${process.env.DB_USERNAME}:${process.env.DB_PASSWORD}@rebel1.qdzrayy.mongodb.net/myproject?retryWrites=true&w=majority`;
 let db = null;
+
 
 // Function to connect to MongoDB
 function connectToMongo(callback) {
