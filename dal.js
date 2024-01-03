@@ -37,8 +37,8 @@ connectToMongo((err) => {
     });
   }
 
-// find user account
-function find(email){
+  // find user account
+  function find(email){
     return new Promise((resolve, reject) => {    
         const customers = db
             .collection('users')
@@ -47,10 +47,10 @@ function find(email){
                 err ? reject(err) : resolve(docs);
         });    
     })
-}
+  }
 
-// find user account
-function findOne(email){
+  // find user account
+  function findOne(email){
     return new Promise((resolve, reject) => {    
         const customers = db
             .collection('users')
@@ -58,10 +58,10 @@ function findOne(email){
             .then((doc) => resolve(doc))
             .catch((err) => reject(err));    
     })
-}
+  }
 
-// update - deposit/withdraw amount
-function update(email, amount){
+  // update - deposit/withdraw amount
+  function update(email, amount){
     return new Promise((resolve, reject) => {    
         const customers = db
             .collection('users')            
@@ -74,10 +74,10 @@ function update(email, amount){
                 }
             );            
     });    
-}
+  }
 
-// all users
-function all(){
+  // all users
+  function all(){
     return new Promise((resolve, reject) => {    
         const customers = db
             .collection('users')
@@ -86,8 +86,7 @@ function all(){
                 err ? reject(err) : resolve(docs);
         });    
     })
-}
+  }
 
-
-module.exports = {create, findOne, find, update, all};
+  module.exports = { create, findOne, find, update, all };
 });
